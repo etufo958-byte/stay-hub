@@ -109,8 +109,8 @@ ${cfg.ga4MeasurementId ? "document.addEventListener('click',function(e){var a=e.
 function renderGo(e) {
   const href = esc(e.deeplink);
   return `<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="no-referrer-when-downgrade"><title>[${esc(e.no)}] ${esc(e.alias)}</title><meta http-equiv="refresh" content="0;url=${href}"><script>location.replace(${JSON.stringify(e.deeplink).replace(/</g, '\\u003c')})</script><style>${CSS}</style></head>
-<body><header class="top"><p class="disc">${DISCLOSURE}</p></header><main><div class="card"><div class="body"><h2>[${esc(e.no)}] ${esc(e.alias)}</h2><p class="rg">예약 페이지로 이동하고 있습니다.</p><a class="btn" href="${href}" rel="sponsored nofollow noopener">이동하지 않으면 여기를 누르세요</a><p class="rg" style="margin-top:12px;text-align:center"><a href="../../">숙소 목록 보기</a></p></div></div></main></body></html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="no-referrer-when-downgrade"><title>[${esc(e.no)}] ${esc(e.alias)}</title><meta http-equiv="refresh" content="0;url=${href}"><style>${CSS}</style></head>
+<body><header class="top"><p class="disc">${DISCLOSURE}</p></header><main><div class="card"><div class="body"><h2>[${esc(e.no)}] ${esc(e.alias)}</h2><p class="rg">예약 페이지로 이동하고 있습니다.</p><a class="btn" href="${href}" rel="sponsored nofollow noopener">이동하지 않으면 여기를 누르세요</a><p class="rg" style="margin-top:12px;text-align:center"><a href="../../">숙소 목록 보기</a></p></div></div></main><script>location.replace(${JSON.stringify(e.deeplink).replace(/</g, '\\u003c')})</script></body></html>
 `;
 }
 

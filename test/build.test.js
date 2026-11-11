@@ -52,6 +52,8 @@ test('최신 번호가 위, 버튼 속성, 상대 경로, 외부 폰트 없음',
   assert.ok(!html.includes('googletagmanager'), 'GA4 기본 꺼짐');
   const go = fs.readFileSync(path.join(root, 'dist/go/010/index.html'), 'utf8');
   assert.ok(go.includes('http-equiv="refresh"') && go.includes('href="../../"'));
+  // 이동 스크립트는 안내·수동 링크가 그려진 뒤(본문 끝)에 있어야 느린 인앱 브라우저에서 흰 화면이 아니다
+  assert.ok(go.indexOf('location.replace') > go.indexOf('class="btn"'));
 });
 
 test('같은 입력이면 같은 출력', () => {
