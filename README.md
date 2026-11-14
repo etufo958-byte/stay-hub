@@ -1,6 +1,6 @@
 # stay-hub
 
-숙소 쇼츠용 링크 허브. `entries/` 또는 `media/`를 push하면 GitHub Actions가 빌드해 GitHub Pages에 배포한다. 비밀값 없음.
+숙소 쇼츠용 링크 허브(채널 "오늘은 여기서" @oneul.yeogiseo). 상단 제목은 "오늘은 여기서", 안내 문구는 영상 CTA "프로필 링크에서 001 검색"과 맞춘다. `entries/` 또는 `media/`를 push하면 GitHub Actions가 빌드해 GitHub Pages에 배포한다. 비밀값 없음.
 
 - 허브: https://etufo958-byte.github.io/stay-hub/
 - 직링크: https://etufo958-byte.github.io/stay-hub/go/001/

@@ -69,3 +69,13 @@ test('GA4 ID를 넣으면 켜진다', () => {
   build(root);
   assert.ok(fs.readFileSync(path.join(root, 'dist/index.html'), 'utf8').includes('gtag/js?id=G-TEST1234'));
 });
+
+test('상단 제목은 채널 이름 "오늘은 여기서", 안내는 영상 CTA(프로필 링크에서 번호 검색)와 맞춘다', () => {
+  const root = fixture({ '001.json': { no: '001', alias: 'A숙소', region: '남해안', deeplink: L } });
+  build(root);
+  const html = fs.readFileSync(path.join(root, 'dist/index.html'), 'utf8');
+  assert.ok(html.includes('<title>오늘은 여기서</title>'));
+  assert.ok(html.includes('<h1>오늘은 여기서</h1>'));
+  assert.ok(html.includes('번호(예: 001)를 검색하세요'));
+  assert.ok(html.indexOf('class="disc"') < html.indexOf('<h1>'), '광고 고지가 제목보다 먼저');
+});

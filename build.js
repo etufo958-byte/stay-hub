@@ -71,6 +71,7 @@ function loadEntries(root) {
 const CSS = `*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#f4f4f5;color:#18181b}
 .top{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e4e4e7}
 .disc{margin:0;padding:6px 12px;font-size:12px;line-height:1.4;background:#18181b;color:#fff;text-align:center}
+.brand{margin:0;padding:10px 12px 0;text-align:center}.brand h1{margin:0;font-size:20px;line-height:1.3}.brand p{margin:2px 0 0;font-size:13px;color:#52525b}
 .sw{padding:8px 12px}.sw input{width:100%;font-size:16px;padding:10px 12px;border:1px solid #d4d4d8;border-radius:10px;background:#fafafa;outline:none}.sw input:focus{border-color:#2563eb;background:#fff}
 main{max-width:520px;margin:0 auto;padding:12px}.card{background:#fff;border-radius:14px;overflow:hidden;margin:0 0 14px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .ph{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#e4e4e7}.body{padding:12px 14px 14px}
@@ -98,8 +99,8 @@ q.addEventListener('input',f);q.addEventListener('compositionend',f);
 var h=location.hash.slice(1);if(h){q.value=decodeURIComponent(h);f()}
 ${cfg.ga4MeasurementId ? "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.btn');if(a&&window.gtag)gtag('event','deeplink_click',{entry_no:a.getAttribute('data-no'),transport_type:'beacon'})});" : ''}})();`;
   return `<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>숙소 링크 모음</title><meta name="description" content="영상에 나온 숙소 예약 링크 모음"><style>${CSS}</style>${gaSnippet(cfg.ga4MeasurementId)}</head>
-<body><header class="top"><p class="disc">${DISCLOSURE}</p><div class="sw"><input id="q" type="search" inputmode="search" placeholder="번호(001) 또는 이름으로 찾기" aria-label="숙소 검색" autocomplete="off"></div></header>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>오늘은 여기서</title><meta name="description" content="오늘은 여기서 - 영상에 나온 숙소 예약 링크 모음"><style>${CSS}</style>${gaSnippet(cfg.ga4MeasurementId)}</head>
+<body><header class="top"><p class="disc">${DISCLOSURE}</p><div class="brand"><h1>오늘은 여기서</h1><p>영상 속 번호(예: 001)를 검색하세요</p></div><div class="sw"><input id="q" type="search" inputmode="search" placeholder="번호(001) 또는 이름으로 찾기" aria-label="숙소 검색" autocomplete="off"></div></header>
 <main>${cards}
 <p id="empty" class="empty"${entries.length ? ' hidden' : ''}>찾는 숙소가 없습니다. 번호를 다시 확인해 주세요.</p></main>
 <script>${js}</script></body></html>
